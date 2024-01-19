@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "TT Lakes", sans-serif;
+}
+body {
+    background-color: #F8F8F8;
+}
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container{
+   display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.header{
+    background: linear-gradient(270deg, #F8F8F8 0%, #FFF 98.61%);
+    border-top: 3px solid #D9FFF5;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+.header__text{
+    color: #7E7E82;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+}
+
+.swiper{
+    display: flex!important;
+    flex-direction: column;
+    gap: 10px;
+    width: 100vw;
+}
+.swiper-slide{
+    width: 240px!important;
+    height: 72px!important;
+    border-radius: 6px;
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    display: flex!important;
+    align-items: center;
+}
+.swiper-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+.swiper__image{
+    max-width: 108px;
+    max-height: 52px;
+}
+.swiper__arrow{
+    width: 40px;
+    height: 40px;
+}
+.swiper-pagination{
+    position: static!important;
+}
+.swiper-pagination-bullet{
+    width: 12px!important;
+    height: 12px!important;
+}
+.swiper-pagination-bullet-active{
+    background: #7E7E82!important;
+}
+.swiper-show{
+    display: none;
+    color: #1B1C21;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    align-items: center;
+    gap: 9px;
+}
+
+
+.hidden{
+    display: none!important;
+}
+@media (min-width: 768px) {
+    .container{
+        gap: 24px;
+    }
+    .header{
+        height: 56px;
+        padding: 0 24px;
+    }
+    .swiper{
+        padding: 0 24px!important;
+    }
+    .swiper-wrapper{
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 16px;
+    }
+    .swiper-slide{
+        width: 224px!important;
+    }
+    .swiper-show{
+        display: flex;
+    }
+}
+
+@media (min-width: 1120px) {
+    .header{
+        padding: 0 32px;
+    }
+    .swiper{
+        padding: 0 32px!important;
+    }
+    .swiper-slide{
+        width: 240px!important;
+    }
+}
