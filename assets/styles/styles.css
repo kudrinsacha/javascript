@@ -49,6 +49,10 @@ button{
     display: flex!important;
     align-items: center;
 }
+.swiper-slide:hover{
+    opacity: 50%;
+    transition: .3s;
+}
 .swiper-button{
     width: 100%;
     display: flex;
@@ -75,7 +79,6 @@ button{
     background: #7E7E82!important;
 }
 .swiper-show{
-    display: none;
     color: #1B1C21;
     font-size: 16px;
     font-weight: 500;
@@ -84,7 +87,6 @@ button{
     align-items: center;
     gap: 9px;
 }
-
 
 .hidden{
     display: none!important;

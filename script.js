@@ -13,18 +13,30 @@ if (window.innerWidth < 768) {
         },
     });
 }
+
 if (window.innerWidth >= 768) {
-    const slides = document.querySelectorAll('.swiper-slide_hidden_768');
+    const slides = document.querySelectorAll('.swiper-slide:nth-child(n + 7)');
+    const buttonShow = document.querySelector('.swiper-show')
     slides.forEach((slide) => {
         slide.classList.add('hidden');
     });
+    buttonShow.classList.remove('hidden')
 }
-if (window.innerWidth >= 1120) {
-    const oneSlide = document.querySelector('.swiper-slide_hidden_320')
-    const twoSlide = document.querySelector('.swiper-slide_hidden_768')
 
-    oneSlide.classList.remove('swiper-slide_hidden_320', 'hidden')
-    twoSlide.classList.remove('swiper-slide_hidden_768', 'hidden')
+if (window.innerWidth >= 1120) {
+    const slides = document.querySelectorAll('.swiper-slide:nth-child(-n + 8)');
+    slides.forEach((slide) => {
+        slide.classList.remove('hidden');
+    });
+}
+
+if (window.innerWidth >= 1360) {
+    const slides = document.querySelectorAll('.swiper-slide')
+    const buttonShow = document.querySelector('.swiper-show')
+    slides.forEach((slide) => {
+        slide.classList.remove('hidden')
+    })
+    buttonShow.classList.add('hidden')
 }
 
 const buttonShow = document.querySelector('.swiper-show');
@@ -32,18 +44,29 @@ const buttonShow = document.querySelector('.swiper-show');
 buttonShow.onclick = function () {
     const slides = document.querySelectorAll('.swiper-slide');
     const showElements = document.querySelectorAll('.swiper-show__arrow, .swiper-show__text');
-    const hiddenSlides = document.querySelectorAll('.swiper-slide_hidden_768, .swiper-slide_hidden_320');
 
     if (buttonShow.classList.contains('active')) {
+
         buttonShow.classList.remove('active');
 
-        hiddenSlides.forEach((slide) => {
-            slide.classList.add('hidden');
-        });
+        if (window.innerWidth >= 768 && window.innerWidth < 1120) {
+            const hiddenSlides = document.querySelectorAll('.swiper-slide:nth-child(n+7)')
+            hiddenSlides.forEach((slide) => {
+                slide.classList.add('hidden');
+            });
+        } else if (window.innerWidth >= 1120) {
+            const hiddenSlides = document.querySelectorAll('.swiper-slide:nth-child(n+9)')
+            hiddenSlides.forEach((slide) => {
+                slide.classList.add('hidden');
+            });
+        }
+
         showElements.forEach((item) => {
             item.classList.toggle('hidden');
         });
+
     } else {
+
         slides.forEach((slide) => {
             slide.classList.remove('hidden');
         });
@@ -52,5 +75,6 @@ buttonShow.onclick = function () {
         });
 
         buttonShow.classList.add('active');
+
     }
 };
