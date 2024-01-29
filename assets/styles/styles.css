@@ -4,21 +4,24 @@
     box-sizing: border-box;
     font-family: "TT Lakes", sans-serif;
 }
+
 body {
     background-color: #F8F8F8;
 }
-button{
+
+button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.container{
-   display: flex;
+.container {
+    display: flex;
     flex-direction: column;
     gap: 16px;
 }
-.header{
+
+.header {
     background: linear-gradient(270deg, #F8F8F8 0%, #FFF 98.61%);
     border-top: 3px solid #D9FFF5;
     height: 80px;
@@ -26,7 +29,8 @@ button{
     align-items: center;
     padding: 0 16px;
 }
-.header__text{
+
+.header__text {
     color: #7E7E82;
     font-size: 16px;
     line-height: 24px;
@@ -34,51 +38,71 @@ button{
     text-transform: uppercase;
 }
 
-.swiper{
-    display: flex!important;
+.swiper {
+    display: flex !important;
     flex-direction: column;
     gap: 10px;
     width: 100vw;
 }
-.swiper-slide{
-    width: 240px!important;
-    height: 72px!important;
+
+.swiper::after {
+    content: "";
+    width: 24px;
+    height: 81px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%);
+}
+
+.swiper-slide {
+    width: 240px !important;
+    height: 72px !important;
     border-radius: 6px;
     border: 1px solid #EAEAEA;
     background: #FFF;
-    display: flex!important;
+    display: flex !important;
     align-items: center;
 }
-.swiper-slide:hover{
+
+.swiper-slide:hover {
     opacity: 50%;
     transition: .3s;
 }
-.swiper-button{
+
+.swiper-button {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
 }
-.swiper__image{
+
+.swiper__image {
     max-width: 108px;
     max-height: 52px;
 }
-.swiper__arrow{
+
+.swiper__arrow {
     width: 40px;
     height: 40px;
 }
-.swiper-pagination{
-    position: static!important;
+
+.swiper-pagination {
+    position: static !important;
 }
-.swiper-pagination-bullet{
-    width: 12px!important;
-    height: 12px!important;
+
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
 }
-.swiper-pagination-bullet-active{
-    background: #7E7E82!important;
+
+.swiper-pagination-bullet-active {
+    background: #7E7E82 !important;
 }
-.swiper-show{
+
+.swiper-show {
     color: #1B1C21;
     font-size: 16px;
     font-weight: 500;
@@ -88,41 +112,57 @@ button{
     gap: 9px;
 }
 
-.hidden{
-    display: none!important;
+.hidden {
+    display: none !important;
 }
+
 @media (min-width: 768px) {
-    .container{
+    .container {
         gap: 24px;
     }
-    .header{
+
+    .header {
         height: 56px;
         padding: 0 24px;
     }
-    .swiper{
-        padding: 0 24px!important;
+
+    .swiper {
+        padding: 0 24px !important;
     }
-    .swiper-wrapper{
+
+    .swiper::after {
+        display: none;
+    }
+
+    .swiper-wrapper {
         flex-wrap: wrap;
         column-gap: 24px;
         row-gap: 16px;
     }
-    .swiper-slide{
-        width: 224px!important;
+
+    .swiper-slide {
+        width: 224px !important;
     }
-    .swiper-show{
+
+    .swiper-show {
         display: flex;
+    }
+
+    .swiper-pagination {
+        display: none;
     }
 }
 
 @media (min-width: 1120px) {
-    .header{
+    .header {
         padding: 0 32px;
     }
-    .swiper{
-        padding: 0 32px!important;
+
+    .swiper {
+        padding: 0 32px !important;
     }
-    .swiper-slide{
-        width: 240px!important;
+
+    .swiper-slide {
+        width: 240px !important;
     }
 }
