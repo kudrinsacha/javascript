@@ -56,6 +56,10 @@ button {
     background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%);
 }
 
+.swiper-wrapper {
+    margin-left: 16px;
+}
+
 .swiper-slide {
     width: 240px !important;
     height: 72px !important;
@@ -138,6 +142,7 @@ button {
         flex-wrap: wrap;
         column-gap: 24px;
         row-gap: 16px;
+        margin: 0;
     }
 
     .swiper-slide {

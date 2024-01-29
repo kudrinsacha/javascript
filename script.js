@@ -1,20 +1,20 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
+const slider = document.querySelector(".swiper");
 let swiper;
 
-function slider() {
-    if (window.innerWidth < 768) {
+function swiperResize() {
+    if (window.innerWidth < 768 && slider.dataset.mobile === "true") {
         const buttonShow = document.querySelector('.swiper-show')
         const slides = document.querySelectorAll('.swiper-slide:nth-child(n + 7)');
-        const slidesHidden = document.querySelectorAll('.swiper-slide:nth-child(n + 9)');
+        const slidesHidden = document.querySelectorAll('.swiper-slide:nth-child(n + 10)');
         swiper = new Swiper('.swiper', {
             spaceBetween: 16,
-            slidesOffsetBefore: 16,
             width: 240,
             height: 72,
             pagination: {
                 el: '.swiper-pagination',
-                clickable: true
+                clickable: true,
             },
         });
         buttonShow.classList.add('hidden')
@@ -24,6 +24,7 @@ function slider() {
         slidesHidden.forEach((slide) => {
             slide.classList.add('hidden');
         });
+        slider.dataset.mobile = "false";
     }
 
     if (window.innerWidth > 767) {
@@ -36,6 +37,7 @@ function slider() {
         if (document.querySelector(".swiper").classList.contains("swiper-initialized")) {
             swiper.destroy();
         }
+        slider.dataset.mobile = "true"
     }
 
     if (window.innerWidth > 1119) {
@@ -96,5 +98,5 @@ buttonShow.onclick = function () {
     }
 };
 
-slider();
-window.addEventListener('resize', slider);
+swiperResize();
+window.addEventListener('resize', swiperResize);
